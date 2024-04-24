@@ -4,13 +4,13 @@ import { StyleSheet } from 'react-native';
 const HomeStyles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#1b1e1f',
+      backgroundColor: '#fbcfef',  //fbcfef
     },
     header: {
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'black',
+      backgroundColor: '#333333',
       paddingVertical: 10,
       paddingHorizontal: 20,
     },
@@ -68,7 +68,8 @@ const HomeStyles = StyleSheet.create({
       fontSize: 18,
       fontWeight: 'bold',
       marginBottom: 30,
-      color: 'white',
+      color: 'black',
+      // fontFamily: 'times-new-roman',
     },
     categories: {
       width: '100%',

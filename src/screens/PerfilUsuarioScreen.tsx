@@ -38,8 +38,10 @@ const PerfilUsuarioScreen: React.FC = () => {
       <TouchableOpacity onPress={handleUploadFoto} style={styles.uploadButton}>
         <Text style={styles.buttonText}>Upload de Foto</Text>
       </TouchableOpacity>
-      <Image source={{ uri: foto }} style={styles.image} />
-      <Button title="Salvar Alterações" onPress={() => alert('Salvar alterações')} />
+      {/* <Image source={{ uri: foto }} style={styles.image} /> */}
+      <View style={styles.containerSalvar}>
+        <Button title="Salvar Alterações" onPress={() => alert('Salvar alterações')} color="#595858"/>
+      </View>
     </View>
   );
 };
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'black',
+        backgroundColor: '#333333',
         paddingVertical: 10,
         paddingHorizontal: 20,
         position: 'absolute',
@@ -88,26 +90,26 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         // paddingHorizontal: 20,
-        backgroundColor: '#4a0638',
+        backgroundColor: '#fbcfef',
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
-        color: 'white',
+        color: 'black',
     },
     input: {
         width: '50%',
         height: 40,
         borderWidth: 1,
-        borderColor: '#ccc',
+        borderColor: 'black',
         borderRadius: 5,
         paddingHorizontal: 10,
         marginBottom: 10,
-        color: 'white',
+        color: 'black',
     },
     uploadButton: {
-        backgroundColor: '#007bff',
+        backgroundColor: '#595858',
         padding: 10,
         borderRadius: 5,
         marginTop: 20,
@@ -122,6 +124,11 @@ const styles = StyleSheet.create({
         height: 150,
         borderRadius: 75,
         marginBottom: 20,
+    },
+    containerSalvar:{
+        // backgroundColor: 'white',
+        // width: 600,
+
     },
 });
 

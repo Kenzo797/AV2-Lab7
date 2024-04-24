@@ -10,6 +10,6 @@ export interface Perfume {
 }
 
 export type RootStackParamList = {
-  ListaProdutos: undefined;
-  DetalhesProduto: { id: number }; // Defina os tipos de parâmetros corretamente
+  ListaPerfumes: undefined;
+  DetalhesPerfume: { id: number }; // Defina os tipos de parâmetros corretamente
 };

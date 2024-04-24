@@ -17,7 +17,7 @@ const ListaPerfumesScreen: React.FC<ListaPerfumesProps> = ({ navigation }) => {
   const handlePerfumePress = (perfume: Perfume) => {
     navigation.navigate('DetalhesProduto', { id: perfume.id});
   };
-                //DAR UMA OLHADA PQ EU FIQUEI DANDO CNTRL Z E MUDEI ALGUMA COISA SEM QUERER
+                //DAR UMA OLHADA PQ EU FIQUEI DEI UNS CNTRL Z SEM QUERER
   return (
 
     <View style={styles.container}>
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
 
   sup: {
-    marginTop: 10,
+    marginTop: 100,
     marginBottom: 20,
   },
 

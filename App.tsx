@@ -6,6 +6,7 @@ import CadastroScreen from './src/screens/CadastroScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import ListaPerfumesScreen from './src/screens/ListaPerfumesScreen';
 import DetalhesProdutoScreen from './src/screens/DetalhesProdutoScreen'; 
+import PerfilUsuarioScreen from './src/screens/PerfilUsuarioScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="ListaProdutos" component={ListaPerfumesScreen} />
         <Stack.Screen name="DetalhesProduto" component={DetalhesProdutoScreen} /> 
+        <Stack.Screen name="PerfilUsuario" component={PerfilUsuarioScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

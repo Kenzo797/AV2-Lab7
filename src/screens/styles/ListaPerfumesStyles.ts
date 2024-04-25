@@ -5,12 +5,12 @@ const ListaPerfumeStyles = StyleSheet.create({
     header: {
       width: '100%',
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
       alignItems: 'center',
       backgroundColor: '#333333',
       paddingVertical: 10,
       paddingHorizontal: 20,
-      position: 'absolute',
+      // position: 'absolute',
       top: 0,
     },
   
@@ -30,12 +30,12 @@ const ListaPerfumeStyles = StyleSheet.create({
     profileImage: {
       width: 50,
       height: 50,
-      marginLeft: 90,
+      // marginLeft: 90,
     },
   
     sup: {
-      marginTop: 100,
-      marginBottom: 20,
+      marginTop: 70,
+      marginBottom: 30,
     },
   
     container: {
@@ -50,7 +50,7 @@ const ListaPerfumeStyles = StyleSheet.create({
       fontSize: 24,
       fontWeight: 'bold',
       marginBottom: 20,
-      color: 'white',
+      color: 'black',
     },
     list: {
       paddingBottom: 20,

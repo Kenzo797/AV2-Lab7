@@ -8,7 +8,7 @@ const HomeStyles = StyleSheet.create({
     },
     header: {
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
       alignItems: 'center',
       backgroundColor: '#333333',
       paddingVertical: 10,
@@ -42,7 +42,7 @@ const HomeStyles = StyleSheet.create({
       height: 50,
       marginRight: 10,
       borderRadius: 10,
-      marginLeft: 110,
+      // marginLeft: 110,
     },
     headerTitle: {
       fontSize: 24,
@@ -52,7 +52,7 @@ const HomeStyles = StyleSheet.create({
     profileImage: {
       width: 50,
       height: 50,
-      marginLeft: 90,
+      // marginLeft: 90,
     },
   
     destaquesContainer: {
@@ -65,7 +65,7 @@ const HomeStyles = StyleSheet.create({
       marginTop: 30,
     },
     sectionTitle: {
-      fontSize: 18,
+      fontSize: 24,
       fontWeight: 'bold',
       marginBottom: 30,
       color: 'black',
@@ -77,8 +77,8 @@ const HomeStyles = StyleSheet.create({
     },
     categoryItem: {
       alignItems: 'center',
-      width: '70%',
-      height: 250,
+      width: '75%',
+      height: '27%',
       paddingVertical: 10,
       paddingHorizontal: 20,
       borderRadius: 5,

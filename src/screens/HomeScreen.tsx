@@ -54,7 +54,7 @@ const HomeScreen: React.FC = () => {
       </View>
 
       <View style={HomeStyles.destaquesContainer}>
-        <Text style={HomeStyles.sectionTitle}>Destaques</Text>
+        <Text style={HomeStyles.sectionTitle}>Lançamentos</Text>
         <View style={HomeStyles.productContainer}>
           <TouchableOpacity style={HomeStyles.productItem}>
             <Text style={HomeStyles.productName}>Camisa Polo</Text>

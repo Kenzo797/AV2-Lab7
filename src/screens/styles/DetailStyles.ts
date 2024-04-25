@@ -5,7 +5,7 @@ const DetailStyles = StyleSheet.create({
     header: {
       width: '100%',
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
       alignItems: 'center',
       backgroundColor: '#333333',
       paddingVertical: 10,
@@ -39,7 +39,13 @@ const DetailStyles = StyleSheet.create({
       fontSize: 24,
       fontWeight: 'bold',
       marginBottom: 40,
-      color: 'white',
+      color: 'black',
+    },
+
+    profileImage: {
+      width: 50,
+      height: 50,
+      // marginLeft: 90,
     },
   
     titleContainer: {
@@ -73,19 +79,23 @@ const DetailStyles = StyleSheet.create({
     },
     button: {
       marginLeft: 30,
-      backgroundColor: 'white',
+      backgroundColor: '#4a0638',
       paddingHorizontal: 20,
       paddingVertical: 10,
       borderRadius: 5,
     },
+
+    buttonText: {
+      color: 'white'
+    },
   
     priceText: {
-      color: 'white',
+      color: 'black',
       fontSize: 30,
     },
   
     detailText: {
-      color: 'white',
+      color: '#4a0638',
       fontSize: 20,
     },
   

@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View , Image, TouchableOpacity} from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
-import { Perfume } from '../types';
-import DetailStyles from './styles/DetailStyles';
+import { Perfume } from '../../types';
+import DetailStyles from '../styles/DetailStyles';
 const DetalhesPerfumeScreen: React.FC = () => {
   const route = useRoute();
   const navigation = useNavigation();

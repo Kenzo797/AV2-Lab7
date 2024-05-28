@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, ImageBackground, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native'; // Importe useNavigation
-import HomeStyles from './styles/HomeStyles';
+import HomeStyles from '../styles/HomeStyles';
 
 const HomeScreen: React.FC = () => {
   const navigation = useNavigation(); // Obtenha o objeto de navegação

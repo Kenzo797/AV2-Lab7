@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './src/screens/LoginScreen';
-import CadastroScreen from './src/screens/CadastroScreen';
-import HomeScreen from './src/screens/HomeScreen';
-import ListaPerfumesScreen from './src/screens/ListaPerfumesScreen';
-import DetalhesPerfumeScreen from './src/screens/DetalhesPerfumeScreen'; 
-import PerfilUsuarioScreen from './src/screens/PerfilUsuarioScreen';
-import CarrinhoScreen from './src/screens/CarrinhoScreen';
+import LoginScreen from './src/screens/login';
+import CadastroScreen from './src/screens/cadastro';
+import HomeScreen from './src/screens/home';
+import ListaPerfumesScreen from './src/screens/lista';
+import DetalhesPerfumeScreen from './src/screens/detalhes'; 
+import PerfilUsuarioScreen from './src/screens/perfil';
+import CarrinhoScreen from './src/screens/carrinho';
 
 const Stack = createStackNavigator();
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
-import AppStyles from './styles/AppStyles'; // Importe os estilos globais
+import AppStyles from '../styles/AppStyles'; // Importe os estilos globais
 
 interface LoginProps {
   navigation: NavigationProp<any>;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
-import AppStyles from './styles/AppStyles';
+import AppStyles from '../styles/AppStyles';
 
 interface CadastroProps {
   navigation: NavigationProp<any>;

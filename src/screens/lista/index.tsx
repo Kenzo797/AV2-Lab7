@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, TouchableOpacity, Image } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack'; 
-import { RootStackParamList } from '../types'; 
-import { Perfume } from '../types';
-import ListaPerfumeStyles from './styles/ListaPerfumesStyles';
+import { RootStackParamList } from '../../types'; 
+import { Perfume } from '../../types';
+import ListaPerfumeStyles from '../styles/ListaPerfumesStyles';
 interface ListaPerfumesProps {
   navigation: StackNavigationProp<RootStackParamList, 'ListaPerfumes'>; 
 }

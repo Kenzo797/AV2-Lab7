@@ -17,18 +17,18 @@ const HomeScreen: React.FC = () => {
   return (
     <ScrollView style={HomeStyles.container}>
       <View style={HomeStyles.header}>
-        <Image source={require('../images/perfil4.jpg')} style={HomeStyles.logo} />
+        <Image source={require('../../images/perfil4.jpg')} style={HomeStyles.logo} />
         <Text style={HomeStyles.headerTitle}>ScentMail</Text>
 
 
         <TouchableOpacity onPress={handleProfilePress}>
-          <Image source={require('../images/paineg.png')} style={HomeStyles.profileImage} />
+          <Image source={require('../../images/paineg.png')} style={HomeStyles.profileImage} />
         </TouchableOpacity>
 
       </View>
 
       <View style={HomeStyles.sup}>
-        <Image source={require('../images/backgroundhome.png')} style={HomeStyles.backgroundHome} />
+        <Image source={require('../../images/backgroundhome.png')} style={HomeStyles.backgroundHome} />
         <Text style={HomeStyles.textOverImage}>Find the Perfect fragance for you</Text>
       </View>
 
@@ -36,17 +36,17 @@ const HomeScreen: React.FC = () => {
         <Text style={HomeStyles.sectionTitle}>Categorias</Text>
         <View style={HomeStyles.categories}>
           <TouchableOpacity style={HomeStyles.categoryItem} onPress={() => handleCategoryPress('Perfumes')}>
-            <ImageBackground style={HomeStyles.backgroundImage} source={require('../images/perfumes.jpg')} imageStyle={HomeStyles.imageBorderRadius}>
+            <ImageBackground style={HomeStyles.backgroundImage} source={require('../../images/perfumes.jpg')} imageStyle={HomeStyles.imageBorderRadius}>
               <Text style={HomeStyles.categoryText}>Perfumes</Text>
             </ImageBackground>
           </TouchableOpacity>
           <TouchableOpacity style={HomeStyles.categoryItem} onPress={() => handleCategoryPress('Colonias')}>
-            <ImageBackground style={HomeStyles.backgroundImage} source={require('../images/colonias.jpg')} imageStyle={HomeStyles.imageBorderRadius}>
+            <ImageBackground style={HomeStyles.backgroundImage} source={require('../../images/colonias.jpg')} imageStyle={HomeStyles.imageBorderRadius}>
               <Text style={HomeStyles.categoryText}>Colônias</Text>
             </ImageBackground>
           </TouchableOpacity>
           <TouchableOpacity style={HomeStyles.categoryItem} onPress={() => handleCategoryPress('Presentes')}>
-            <ImageBackground style={HomeStyles.backgroundImage} source={require('../images/presentes.jpg')} imageStyle={HomeStyles.imageBorderRadius}>
+            <ImageBackground style={HomeStyles.backgroundImage} source={require('../../images/presentes.jpg')} imageStyle={HomeStyles.imageBorderRadius}>
               <Text style={HomeStyles.categoryText}>Presentes</Text>
             </ImageBackground>
           </TouchableOpacity>

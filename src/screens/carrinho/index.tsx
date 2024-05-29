@@ -18,12 +18,12 @@ const CarrinhoScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require('../images/perfil4.jpg')} style={styles.logo} />
+        <Image source={require('../../images/perfil4.jpg')} style={styles.logo} />
         <Text style={styles.headerTitle}>ScentMail</Text>
 
 
         <TouchableOpacity onPress={handleProfilePress}>
-          <Image source={require('../images/paineg.png')} style={styles.profileImage} />
+          <Image source={require('../../images/paineg.png')} style={styles.profileImage} />
         </TouchableOpacity>
 
       </View>

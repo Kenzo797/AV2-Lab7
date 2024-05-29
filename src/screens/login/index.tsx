@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
 import AppStyles from '../styles/AppStyles'; // Importe os estilos globais
+// import { getAuth } from '@firebase/auth';
 
 interface LoginProps {
   navigation: NavigationProp<any>;
@@ -22,7 +23,7 @@ const LoginScreen: React.FC<LoginProps> = ({ navigation }) => {
   return (
     <View style={AppStyles.container}>
       <View style={styles.logoContainer}>
-        <Image source={require('../images/perfil4.jpg')} style={styles.logo} />
+        <Image source={require('../../images/perfil4.jpg')} style={styles.logo} />
         <Text style={styles.logoText}>ScentMail</Text>
       </View>
       <TextInput

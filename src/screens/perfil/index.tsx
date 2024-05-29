@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, Button } fr
 const PerfilUsuarioScreen: React.FC = () => {
   const [nome, setNome] = useState('Arthur Kenzo');
   const [email, setEmail] = useState('arthur@hotmail.com');
-  const [foto, setFoto] = useState('../images/perfil4.jpg');
+  const [foto, setFoto] = useState('../../images/perfil4.jpg');
 
   const handleUploadFoto = () => {
     // Lógica para lidar com o upload da foto
@@ -15,14 +15,14 @@ const PerfilUsuarioScreen: React.FC = () => {
     <View style={styles.container}>
         
         <View style={styles.header}>
-            <Image source={require('../images/perfil4.jpg')} style={styles.logo} />
+            <Image source={require('../../images/perfil4.jpg')} style={styles.logo} />
             <TouchableOpacity>
                 <Text style={styles.headerTitle}>ScentMail</Text>
             </TouchableOpacity>
         </View>
 
       <Text style={styles.title}>Perfil do Usuário</Text>
-      <Image source={require('../images/paineg.png')} style={styles.foto} />
+      <Image source={require('../../images/paineg.png')} style={styles.foto} />
       <TextInput
         style={styles.input}
         placeholder="Nome"

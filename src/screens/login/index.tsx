@@ -1,23 +1,34 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
+import { useState } from "react";
+import { StyleSheet, Text, View, TextInput, Button, Image, Alert } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
 import AppStyles from '../styles/AppStyles'; // Importe os estilos globais
-// import { getAuth } from '@firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from '@firebase/auth';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { StackParams } from "../../navigation";
+import { Formik } from "formik";
 
 interface LoginProps {
   navigation: NavigationProp<any>;
 }
 
-const LoginScreen: React.FC<LoginProps> = ({ navigation }) => {
-  const handleLogin = () => {
-    // Lógica de login aqui...
-    // Você pode implementar a lógica para autenticar o usuário.
 
-    navigation.navigate('Home'); // Exemplo de redirecionamento para a tela Home após o login.
+export default function LoginScreen() {
+
+
+  const navigation = useNavigation<StackNavigationProp<StackParams, "login">>();
+  const auth = getAuth();
+  const handleLogin = async ({email, senha} : any) => {
+    
+    await signInWithEmailAndPassword(auth, email, senha)
+        .then(usuario => navigation.reset({index: 0, routes: [{name: 'home'}]}))
+        .catch(erro => Alert.alert('Erro', 'Login ou senha incorreta!')); 
+    // navigation.navigate('home'); // Exemplo de redirecionamento para a tela Home após o login.
   };
 
   const handleCadastro = () => {
-    navigation.navigate('Cadastro');
+    navigation.navigate('cadastro');
   };
 
   return (
@@ -26,22 +37,38 @@ const LoginScreen: React.FC<LoginProps> = ({ navigation }) => {
         <Image source={require('../../images/perfil4.jpg')} style={styles.logo} />
         <Text style={styles.logoText}>ScentMail</Text>
       </View>
-      <TextInput
-        style={AppStyles.input}
-        placeholder="Digite seu email"
-        placeholderTextColor="#ffffff"
-      />
-      <TextInput
-        style={AppStyles.input}
-        placeholder="Digite sua senha"
-        placeholderTextColor="#ffffff"
-        secureTextEntry
-      />
-      <View style={AppStyles.buttonContainer}>
-        <Button title="Entrar" onPress={handleLogin} color="#595858" />
-        <View style={AppStyles.separator} />
-        <Button title="Cadastre-se" onPress={handleCadastro} color="#595858" />
-      </View>
+
+      <Formik  initialValues={{email:'', senha:''}}
+          onSubmit={handleLogin}>
+
+            {({handleChange, handleSubmit, isSubmitting}) => (
+                <>
+                    <TextInput
+                      onChangeText={handleChange('email')}
+                      style={AppStyles.input}
+                      placeholder="Digite seu email"
+                      placeholderTextColor="#ffffff"
+                    />
+                    <TextInput
+                      onChangeText={handleChange('senha')}
+                      style={AppStyles.input}
+                      placeholder="Digite sua senha"
+                      placeholderTextColor="#ffffff"
+                      secureTextEntry
+                    />
+                    <View style={AppStyles.buttonContainer}>
+                      <Button title="Entrar" onPress={() => handleSubmit()} disabled={isSubmitting} color="#595858" />
+                      <View style={AppStyles.separator} />
+                      <Button title="Cadastre-se" onPress={handleCadastro} color="#595858" />
+                    </View>
+                </>
+            )}
+
+
+
+      </Formik>
+
+
     </View>
   );
 };
@@ -63,4 +90,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+// export default LoginScreen;

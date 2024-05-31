@@ -20,15 +20,15 @@ const ListaPerfumesScreen: React.FC<ListaPerfumesProps> = ({ navigation }) => {
   ]);
 
   const handlePerfumePress = (perfume: Perfume) => {
-    navigation.navigate('DetalhesPerfume', { id: perfume.id});
+    navigation.navigate('detalhesPerfume', { id: perfume.id});
   };
 
   const handleProfilePress = () => {
-    navigation.navigate('PerfilUsuario'); 
+    navigation.navigate('perfilUsuario'); 
   };
 
   const handleTitlePress = () => {
-    navigation.navigate('Home');
+    navigation.navigate('home');
   };
 
 

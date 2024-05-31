@@ -7,7 +7,7 @@ const CarrinhoScreen: React.FC = () => {
 
   // Método para adicionar o produto ao carrinho
   const handleAddToCart = (productId: number) => {
-    navigation.navigate('Carrinho', { productId });
+    navigation.navigate('carrinho', { productId });
   };
 
   const handleProfilePress = () => {

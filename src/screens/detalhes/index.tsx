@@ -31,15 +31,15 @@ const DetalhesPerfumeScreen: React.FC = () => {
   }
 
   const handleAdicionarCarrinho = (perfume: Perfume) => {
-    navigation.navigate('Carrinho', { id: perfume.id});
+    navigation.navigate('carrinho', { id: perfume.id});
   };
 
   const handleProfilePress = () => {
-    navigation.navigate('PerfilUsuario'); 
+    navigation.navigate('perfilUsuario'); 
   };
 
   const handleTitlePress = () => {
-    navigation.navigate('Home');
+    navigation.navigate('home');
   };
 
   // Exibe os detalhes do produto encontrado

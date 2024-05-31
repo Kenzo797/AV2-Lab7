@@ -7,11 +7,11 @@ const HomeScreen: React.FC = () => {
   const navigation = useNavigation(); // Obtenha o objeto de navegação
 
   const handleCategoryPress = (category: string) => {
-    navigation.navigate('ListaPerfume', { category: category });
+    navigation.navigate('listaPerfume', { category: category });
   };
 
   const handleProfilePress = () => {
-    navigation.navigate('PerfilUsuario'); // Navegue para a tela de perfil de usuário
+    navigation.navigate('perfilUsuario'); // Navegue para a tela de perfil de usuário
   };
 
   return (

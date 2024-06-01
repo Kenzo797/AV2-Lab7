@@ -23,7 +23,7 @@ export default function LoginScreen() {
     
     await signInWithEmailAndPassword(auth, email, senha)
         .then(usuario => navigation.reset({index: 0, routes: [{name: 'home'}]}))
-        .catch(erro => Alert.alert('Erro', 'Login ou senha incorreta!')); 
+        .catch(erro => Alert.alert('Erro', 'Dados incorretos!')); 
     // navigation.navigate('home'); // Exemplo de redirecionamento para a tela Home após o login.
   };
 

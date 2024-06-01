@@ -4,13 +4,14 @@ import * as Yup from 'yup';
 import { useNavigation } from "@react-navigation/native";
 import { getAuth, createUserWithEmailAndPassword } from '@firebase/auth';
 import { getFirestore, setDoc, doc } from '@firebase/firestore';
-
+import { StackParams } from "../../navigation";
+import { StackNavigationProp } from '@react-navigation/stack';
 
 export default function CadastroScreen() {
 
   const auth = getAuth();
   const db = getFirestore();
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigationProp<StackParams, 'cadastro'>>();
 
   const handleLogin = () => {
     navigation.navigate('login');
@@ -24,8 +25,8 @@ export default function CadastroScreen() {
               setDoc(doc(db, 'usuarios', usuario.user.uid), {
                   email, nome
               })
-
-              // navigation.goBack()
+              Alert.alert('Sucesso', 'Usuário criado');
+              navigation.goBack()
           })
           .catch(erro => Alert.alert('Erro', 'Não foi possivel criar o usuário, tente novamente'))
   }

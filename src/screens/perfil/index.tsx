@@ -27,7 +27,12 @@ export default function  PerfilUsuarioScreen() {
   useEffect(() => {
     if (auth.currentUser) {
         getDoc(doc(db, 'usuarios', auth.currentUser.uid))
-            .then(dados => setUsuario(dados.data()))
+            .then(dados => {
+                const userData = dados.data();
+                if(userData){
+                    setUsuario(userData as Usuario);
+                }
+            })
     }
   }, [])
 
@@ -77,28 +82,43 @@ export default function  PerfilUsuarioScreen() {
                 senha: Yup.string().min(6, 'O campo senha precisa ter no mínimo 6 caracteres')
             })}>
             {({handleChange, values, errors, touched, handleBlur, isSubmitting, handleSubmit}) => (
-                <View style={{marginTop: 20}}>
+                <View style={styles.containerForm}>
+                    <Text style={styles.title}>Perfil do Usuário</Text>
+                    <Image source={require('../../images/paineg.png')} style={styles.foto} />
+
                     {/* NOME */}
-                    <Text>Nome: </Text>
-                    <TextInput value={values.nome} onChangeText={handleChange('nome')} onBlur={handleBlur('nome')} style={styles.input}/>
+                    <TextInput value={values.nome} 
+                    onChangeText={handleChange('nome')} 
+                    onBlur={handleBlur('nome')} 
+                    style={styles.input}/>
+
                     {touched.nome && errors.nome && <Text style={styles.erro}>{errors.nome}</Text>}
                     
                     {/* EMAIL */}
-                    <Text>Email: </Text>
-                    <TextInput  value={values.email} onChangeText={handleChange('email')} onBlur={handleBlur('email')} keyboardType="email-address" style={styles.input}/>
+                    <TextInput  value={values.email} 
+                    onChangeText={handleChange('email')} 
+                    onBlur={handleBlur('email')} 
+                    keyboardType="email-address" 
+                    style={styles.input}/>
+
                     {touched.email && errors.email && <Text style={styles.erro}>{errors.email}</Text>}
 
                     {/* Senha */}
-                    <Text>Senha: </Text>
-                    <TextInput onChangeText={handleChange('senha')} onBlur={handleBlur('senha')} secureTextEntry style={styles.input}/>
+                    <TextInput onChangeText={handleChange('senha')} 
+                    onBlur={handleBlur('senha')} 
+                    // placeholder="Digite a nova senha"
+                    // placeholderTextColor="#ffffff"
+                    secureTextEntry 
+                    style={styles.input}/>
+                    
                     {touched.senha && errors.senha && <Text style={styles.erro}>{errors.senha}</Text>}
 
                     {/* CADASTRAR */}
-                    <Button title="Atualizar" onPress={() => handleSubmit()} disabled={isSubmitting} />
-                    
-                    <Button title="Sair" color="tomato" onPress={() => {
+                    <Button title="Atualizar" onPress={() => handleSubmit()} disabled={isSubmitting} color="#595858"/>
+                    <View style={styles.separator}></View>
+                    <Button title="Sair" color="#595858" onPress={() => {
                         auth.signOut();
-                        //navigation.reset({index: 0, routes: [{name: 'login'}]})
+                        navigation.reset({index: 0, routes: [{name: 'login'}]})
                     }}/>
                 </View>
             )}
@@ -136,16 +156,17 @@ const styles = StyleSheet.create({
     },
     foto: 
     {
+        alignItems:"center",
         width: 100,
         height: 100,
         marginBottom: 20,
+        // backgroundColor: "red",
     },
 
     sup: {
         marginTop: 100,
         marginBottom: 20,
     },
-
 
     container: {
         flex: 1,
@@ -155,6 +176,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fbcfef',
     },
     title: {
+        textAlign: "center",
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
@@ -192,8 +214,25 @@ const styles = StyleSheet.create({
         // width: 600,
         borderRadius: 15,
         top: 10,
-
     },
+
+    containerForm: {
+        width:'100%',
+        // backgroundColor:"red",
+        display:"flex",
+        // justifyContent:"center",
+        alignItems:"center",
+    },
+
+    erro: {
+        color: 'red',
+        textAlign: 'right'
+    },
+
+    separator: {
+        width: 10, // Largura do espaçamento entre os botões
+        height: 10,
+      },
 });
 
 // export default PerfilUsuarioScreen;
